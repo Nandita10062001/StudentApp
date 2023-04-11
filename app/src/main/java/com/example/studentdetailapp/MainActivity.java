@@ -3,6 +3,7 @@ package com.example.studentdetailapp;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -70,14 +71,17 @@ public class MainActivity extends AppCompatActivity {
                     email.setError("Please enter a valid Email Address!");
                     email.requestFocus();
                 }
-
-                ArrayList<String> al = new ArrayList<String>(Arrays.asList(fName,lName,Email,mobile));
-
+               ArrayList<String> arr = new ArrayList<String>();
+               arr.add(fName);
+               arr.add(lName);
+               arr.add(Email);
+               arr.add(mobile);
+               System.out.println("The list: " +arr);
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(MainActivity.this,SecondScreen.class);
-                        intent.putExtra("array_list",al);
+                        intent.putExtra("list", arr);
                         startActivity(intent);
 
                     }

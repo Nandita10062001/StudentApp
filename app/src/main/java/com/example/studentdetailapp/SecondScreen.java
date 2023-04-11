@@ -14,8 +14,8 @@ public class SecondScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_screen);
-        ArrayList<String> fetch = (ArrayList<String>) getIntent().getSerializableExtra("array_list");
-        fetch= getIntent().getStringArrayListExtra("array_list");
-        textView.setText(String.valueOf(fetch));
+        textView = findViewById(R.id.text);
+        ArrayList<String> numbersList = (ArrayList<String>) getIntent().getSerializableExtra("list");
+        textView.setText(String.valueOf(numbersList));
     }
 }
